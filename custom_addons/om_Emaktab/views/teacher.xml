@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="action_emaktab_teacher" model="ir.actions.act_window">
+    <field name="name">Teachers</field>
+    <field name="res_model">emaktab.teacher</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+  <menuitem action="action_emaktab_teacher" id="menu_emaktab_teacherlist" name="Teacher List" parent="menu_emaktab_management" sequence="10"/>
+  <record id="view_emaktab_teacher_form" model="ir.ui.view">
+    <field name="arch" type="xml">
+      <form>
+        <div class="oe_chatter">
+          <field name="message_follower_ids"/>
+          <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+        </div>
+        <sheet>
+          <div class="oe_title">
+            <h1>
+              <field name="ref" readonly="1"/>
+            </h1>
+          </div>
+          <group>
+            <field name="name"/>
+            <field name="surname"/>
+            <field name="dateofbirth"/>
+            <field name="gender"/>
+            <field name="email"/>
+            <field name="phone"/>
+            <field name="group_id"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+    <field name="model">emaktab.teacher</field>
+    <field name="name">emaktab.teacher.form</field>
+  </record>
+  <record id="view_emaktab_teacher_search" model="ir.ui.view">
+    <field name="arch" type="xml">
+      <search>
+        <field name="ref"/>
+        <field name="name"/>
+        <field name="surname"/>
+        <field name="email"/>
+        <field name="phone"/>
+        <field name="group_id"/>
+      </search>
+    </field>
+    <field name="model">emaktab.teacher</field>
+    <field name="name">emaktab.teacher.search</field>
+  </record>
+  <record id="view_emaktab_teacher_tree" model="ir.ui.view">
+    <field name="arch" type="xml">
+      <tree>
+        <field name="ref"/>
+        <field name="name"/>
+        <field name="surname"/>
+        <field name="gender"/>
+        <field name="email"/>
+        <field name="phone"/>
+        <field name="group_id"/>
+      </tree>
+    </field>
+    <field name="model">emaktab.teacher</field>
+    <field name="name">emaktab.teacher.tree</field>
+  </record>
+</odoo>

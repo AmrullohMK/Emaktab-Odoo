@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+om_Emaktab.access_emaktab_student,access_emaktab_student,om_Emaktab.model_emaktab_student,om_Emaktab.group_emaktab_administrator,1,1,1,1
+om_Emaktab.access_emaktab_teacher,access_emaktab_teacher,om_Emaktab.model_emaktab_teacher,om_Emaktab.group_emaktab_administrator,1,1,1,1
+om_Emaktab.access_emaktab_group,access_emaktab_group,om_Emaktab.model_emaktab_group,om_Emaktab.group_emaktab_administrator,1,1,1,1
+om_Emaktab.access_emaktab_income,access_emaktab_income,om_Emaktab.model_emaktab_income,om_Emaktab.group_emaktab_administrator,1,0,1,0
+om_Emaktab.access_emaktab_spending,access_emaktab_spending,om_Emaktab.model_emaktab_spending,om_Emaktab.group_emaktab_administrator,0,0,0,0
+
+om_Emaktab.access_emaktab_admin_income,access_emaktab_income,om_Emaktab.model_emaktab_income,om_Emaktab.group_emaktab_admin,1,1,1,1
+om_Emaktab.access_emaktab_admin_spending,access_emaktab_spending,om_Emaktab.model_emaktab_spending,om_Emaktab.group_emaktab_admin,1,1,1,1

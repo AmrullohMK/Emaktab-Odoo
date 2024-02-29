@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="sequence_emaktab_student" model="ir.sequence">
+      <field name="code">emaktab.student.list</field>
+      <field name="name">Emaktab Student Sequence</field>
+      <field name="padding">5</field>
+      <field name="prefix">S</field>
+    </record>
+  </data>
+  <data>
+    <record id="sequence_emaktab_teacher" model="ir.sequence">
+      <field name="code">emaktab.teacher.list</field>
+      <field name="name">Emaktab Teacher Sequence</field>
+      <field name="padding">3</field>
+      <field name="prefix">T</field>
+    </record>
+  </data>
+   <data>
+    <record id="sequence_emaktab_group" model="ir.sequence">
+      <field name="code">emaktab.group.list</field>
+      <field name="name">Emaktab Group Sequence</field>
+      <field name="padding">3</field>
+      <field name="prefix">CLASS-</field>
+    </record>
+  </data>
+  <data>
+    <record id="sequence_emaktab_income" model="ir.sequence">
+      <field name="code">emaktab.income.list</field>
+      <field name="name">Emaktab Income Sequence</field>
+      <field name="padding">5</field>
+      <field name="prefix">INC</field>
+    </record>
+  </data>
+  <data>
+    <record id="sequence_emaktab_spending" model="ir.sequence">
+      <field name="code">emaktab.spending.list</field>
+      <field name="name">Emaktab Spending Sequence</field>
+      <field name="padding">5</field>
+      <field name="prefix">SPN</field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_emaktab_root"
+        name="Emaktab"
+        sequence="10"/>
+    
+    <menuitem id="menu_emaktab_management"
+        name="Management"
+        parent="menu_emaktab_root"
+        sequence="10"/>
+
+    <menuitem id="menu_emaktab_studentlist"
+        name="Student List"
+        parent="menu_emaktab_management"
+        sequence="20"/>
+
+    <menuitem id="menu_emaktab_teacherlist"
+        name="Teacher List"
+        parent="menu_emaktab_management"
+        sequence="20"/>
+
+    <menuitem id="menu_emaktab_grouplist"
+        name="Group List"
+        parent="menu_emaktab_management"
+        sequence="30"/>
+
+    <menuitem id="menu_emaktab_incomelist"
+        name="Income List"
+        parent="menu_emaktab_root"
+        sequence="40"/>
+    
+    <menuitem id="menu_emaktab_spendinglist"
+        name="Spending List"
+        parent="menu_emaktab_root"
+        sequence="50"/>
+
+</odoo>

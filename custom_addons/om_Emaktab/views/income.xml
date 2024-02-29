@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="action_emaktab_income" model="ir.actions.act_window">
+    <field name="name">Incomes</field>
+    <field name="res_model">emaktab.income</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="view_mode">tree,form,graph</field>
+  </record>
+  <menuitem action="action_emaktab_income" id="menu_emaktab_incomelist" name="Income List" parent="menu_emaktab_root" sequence="40"/>
+  <record id="view_emaktab_income_form" model="ir.ui.view">
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <button id="button_accept" name="action_accept" string="Accept" class="btn-primary btn-success" type="object" 
+          groups= "om_Emaktab.group_emaktab_administrator,om_Emaktab.group_emaktab_admin" attrs="{'invisible': ['|', ('id', '=', False), ('status', '!=', 'inreview')]}"/>
+          <button id="button_reject" name="action_reject" string="Reject" class="btn-primary btn-danger" type="object" 
+          groups= "om_Emaktab.group_emaktab_administrator,om_Emaktab.group_emaktab_admin" attrs="{'invisible': ['|', ('id', '=', False), ('status', '!=', 'inreview')]}"/>
+        </header>
+        <div class="oe_chatter">
+          <field name="message_follower_ids"/>
+          <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+        </div>
+        <sheet>
+          <div class = "oe_title">
+            <h1> 
+              <field name="ref" readonly="1"/>
+            </h1>
+          </div>
+          <group>
+            <field name="cheque"/>
+            <field name="currency_id"/>
+            <field name="amount"/>
+            <field name="student_id"/>
+            <field name="group_id" widget="selection"/> 
+            <field name="comment"/>
+              <!-- success = green, warning = yellow , danger = red -->
+            <field name="status" 
+              decoration-success="status == 'accepted'" 
+              decoration-warning="status == 'inreview'"
+              decoration-danger="status == 'rejected'"
+              widget="badge"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+    <field name="model">emaktab.income</field>
+    <field name="name">emaktab.income.form</field>
+  </record>
+  <record id="view_emaktab_income_tree" model="ir.ui.view">
+    <field name="arch" type="xml">
+      <tree>
+        <field name="ref"/>
+        <field name="cheque"/>
+        <field name="amount"/>
+        <field name="student_id"/>
+        <field name="group_id"/>
+        <field name="create_date"/>
+        <field name="comment"/>
+        <field name="status" 
+          decoration-success="status == 'accepted'" 
+          decoration-warning="status == 'inreview'"
+          decoration-danger="status == 'rejected'"
+          widget="badge"/>
+        <button name="action_accept" string="Accept" class="btn-primary btn-success" groups= "om_Emaktab.group_emaktab_administrator,om_Emaktab.group_emaktab_admin" type="object" attrs="{'invisible': [('status', '!=', 'inreview')]}"/>
+        <button name="action_reject" string="Reject" class="btn-primary btn-danger" groups= "om_Emaktab.group_emaktab_administrator,om_Emaktab.group_emaktab_admin" type="object" attrs="{'invisible': [('status', '!=', 'inreview')]}"/>
+      </tree>
+    </field>
+    <field name="model">emaktab.income</field>
+    <field name="name">emaktab.income.tree</field>
+  </record>
+
+   <record id="view_emaktab_income_search" model="ir.ui.view">
+    <field name="arch" type="xml">
+      <search>
+        <field name="ref"/>
+        <field name="cheque"/>
+        <field name="amount"/>
+        <field name="student_id"/>
+        <field name="group_id"/>
+        <field name="create_date"/>
+        <field name="comment"/>
+      </search>
+    </field>
+    <field name="model">emaktab.income</field>
+    <field name="name">emaktab.income.search</field>
+  </record>
+
+  <record id="income_graph" model="ir.ui.view">
+    <field name="name">emaktab.income.graph</field>
+    <field name="model">emaktab.income</field>
+    <field name="arch" type="xml">
+        <graph string="Income Graph">
+            <field name="group_id" type="row" string="Group" optional="True"/>
+            <field name="student_id" type="row" string="Student" optional="True"/>
+            <field name="amount" type="measure"/>
+        </graph>
+    </field>
+  </record>
+
+</odoo>
